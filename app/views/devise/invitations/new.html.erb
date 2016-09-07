@@ -3,10 +3,7 @@
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
   <%= devise_error_messages! %>
 
-  <p>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
-  </p>
+  <%= render partial: "users/formFields", locals: {f: f} %>
 
   <p>
     <%= f.label :email %><br/>
