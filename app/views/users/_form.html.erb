@@ -1,4 +1,4 @@
 <%= form_for @user do |f| %>
   <%= render partial: "users/formFields", locals: {f: f} %>
-  <p><%= f.submit "Save" %></p>
+  <p><%= f.submit "Save", class: "btn btn-primary" %></p>
 <% end %>
