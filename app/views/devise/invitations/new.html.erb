@@ -1,14 +1,20 @@
 <h2><%= t "devise.invitations.new.header" %></h2>
 
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post, class: "form-horizontal"} do |f| %>
   <%= devise_error_messages! %>
 
   <%= render partial: "users/formFields", locals: {f: f} %>
 
-  <p>
-    <%= f.label :email %><br/>
-    <%= f.text_field :email %>
-  </p>
+  <div class="field form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+  </div>
 
-  <p><%= f.submit t("devise.invitations.new.submit_button"), class: "btn btn-primary" %></p>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit t("devise.invitations.new.submit_button"), class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
