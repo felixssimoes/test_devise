@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   respond_to :html
 
   before_filter :load_user, only: [:edit, :update]
