@@ -13,6 +13,9 @@
     </td>
     <td>
       <%= link_to "Edit", edit_user_path(user), class: "btn btn-info btn-xs" %>
+      <%- if can? :edit, user %>
+        <%= link_to "Edit", edit_user_path(user), class: "btn btn-info btn-xs" %>
+      <% end -%>
     </td>
   </tr>
   <% end  %>
