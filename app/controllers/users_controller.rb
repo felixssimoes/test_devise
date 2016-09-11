@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   respond_to :html
 
-  before_filter :load_user, only: [:edit, :update]
+  before_filter :load_user, only: [:show, :edit, :update]
 
   def index
     @users = User.all
     authorize! :index, @users
+  end
+
+  def Show
+    authorize! :show, @users
   end
 
   def edit
