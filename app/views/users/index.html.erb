@@ -1,6 +1,8 @@
 <h1>Users</h1>
 
-<p><%= link_to "Invite User", new_user_invitation_path, class: "btn btn-primary" %>
+<%- if can? :invite, User %>
+  <p><%= link_to "Invite User", new_user_invitation_path, class: "btn btn-primary" %>
+<% end -%>
 
 <table class="table">
   <% @users.each do |user| %>
